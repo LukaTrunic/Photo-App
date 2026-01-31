@@ -94,3 +94,42 @@ Spring generates runtime proxy implementations for repository interfaces to inte
 
 **Description:**  
 UI fragments are attached to pages dynamically, adding responsibilities such as navigation without modifying page logic.
+
+---
+
+## Firebase Configuration
+
+This project uses **Firebase Authentication** and the **Firebase Admin SDK**.
+
+For security reasons, sensitive credentials are **not included** in this repository.
+
+---
+
+### 1️Firebase Service Account (Backend Configuration)
+
+The backend requires a Firebase **service account key** for server-side authentication and token verification.
+
+#### How to obtain `firebase-service-account.json`:
+1. Open **Firebase Console**
+2. Select your project
+3. Go to **Project Settings → Service Accounts**
+4. Click **Generate new private key**
+5. Download the JSON file
+6. Rename it to: `firebase-service-account.json`
+7. Where to place the file: `src/main/resources/firebase-service-account.json` instead of `firebase-service-account.json.example`
+
+---
+
+### Firebase Web Configuration (Frontend – Login)
+
+Firebase web configuration keys are used for **client-side authentication** and are **public by design**.
+
+#### How to obtain the Firebase web configuration:
+1. Open **Firebase Console**
+2. Go to **Project Settings**
+3. Scroll to **Your apps**
+4. Select the **Web App**
+5. Copy the Firebase configuration object
+
+#### Where to add the configuration: `src/main/resources/templates/login.html` Inside the script section
+
