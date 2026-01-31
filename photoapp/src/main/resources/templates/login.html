@@ -260,12 +260,12 @@
 
 <script>
     const firebaseConfig = {
-        apiKey: "AIzaSyAMqxFE2juHBY4p2AssrbEM0J_XihSGBxk",
-        authDomain: "photo-app-11931.firebaseapp.com",
-        projectId: "photo-app-11931",
-        storageBucket: "photo-app-11931.appspot.com",
-        messagingSenderId: "307362852330",
-        appId: "1:307362852330:web:465bf845f39642dbc81693"
+        apiKey: "Your_Api_Key",
+        authDomain: "Your_Domain",
+        projectId: "Your_Project_Id",
+        storageBucket: "Storage_Bucket,
+        messagingSenderId: "Sender_Id",
+        appId: "App_Id"
     };
 
     firebase.initializeApp(firebaseConfig);
@@ -277,11 +277,11 @@
         firebase.auth()
             .signInWithPopup(provider)
             .then(res => {
-                console.log('✅ Firebase Google auth successful');
+                console.log('Firebase Google auth successful');
                 return res.user.getIdToken();
             })
             .then(token => {
-                console.log('🔑 Got ID token, sending to backend...');
+                console.log('Got ID token, sending to backend...');
                 return fetch("/firebase-login", {
                     method: "POST",
                     headers: {
@@ -301,11 +301,11 @@
                 return res.json();
             })
             .then(data => {
-                console.log('✅ Backend auth successful:', data);
+                console.log('Backend auth successful:', data);
                 window.location.href = "/";
             })
             .catch(err => {
-                console.error("❌ Google login error:", err);
+                console.error("Google login error:", err);
                 alert("Google login failed: " + err.message);
             });
     };
@@ -313,16 +313,16 @@
 
     document.getElementById("githubBtn").onclick = () => {
         const provider = new firebase.auth.GithubAuthProvider();
-        console.log('🐙 GitHub login started...');
+        console.log('GitHub login started...');
 
         firebase.auth()
             .signInWithPopup(provider)
             .then(res => {
-                console.log('✅ Firebase GitHub auth successful');
+                console.log('Firebase GitHub auth successful');
                 return res.user.getIdToken();
             })
             .then(token => {
-                console.log('🔑 Got ID token, sending to backend...');
+                console.log('Got ID token, sending to backend...');
                 return fetch("/firebase-login", {
                     method: "POST",
                     headers: {
@@ -342,11 +342,11 @@
                 return res.json();
             })
             .then(data => {
-                console.log('✅ Backend auth successful:', data);
+                console.log('Backend auth successful:', data);
                 window.location.href = "/";
             })
             .catch(err => {
-                console.error("❌ GitHub login error:", err);
+                console.error("GitHub login error:", err);
                 alert("GitHub login failed: " + err.message);
             });
     };
