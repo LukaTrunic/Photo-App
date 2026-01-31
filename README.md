@@ -2,8 +2,6 @@
 
 This project applies multiple **design patterns** across different layers.
 
----
-
 ## Implemented Design Patterns
 
 ### 1. Strategy Pattern  
